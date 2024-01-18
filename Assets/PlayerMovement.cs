@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,8 +29,17 @@ public class PlayerMovement : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 
-        // 
+        // Move Player with controller
         Vector3 movement = transform.right * xAxis + transform.forward * zAxis;
         cC.Move(movement * speed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Guard")
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            SceneManager.LoadScene("FailScene");
+        }
     }
 }

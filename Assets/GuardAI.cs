@@ -22,6 +22,7 @@ public class GuardAI : MonoBehaviour
     {
         if (!follow)
         {
+            guard.speed = 2;
             if (transform.position == targetPosition)
             {
                 newPosition();
@@ -29,6 +30,7 @@ public class GuardAI : MonoBehaviour
         }
         else
         {
+            guard.speed = 6;
             targetPosition = new Vector3(player.position.x, 1.5f, player.position.z);
             if (!cooldownstarted)
             {
