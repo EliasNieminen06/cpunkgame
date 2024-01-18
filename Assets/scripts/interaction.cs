@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class interaction : MonoBehaviour
 {
+    public GameObject door1;
     public Canvas compcanvas;
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            Destroy(door1);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

@@ -43,18 +43,10 @@ public class GuardAI : MonoBehaviour
     // Get new position
     void newPosition()
     {
-        float positionX = Random.Range(2, 13);
-        float positionZ = Random.Range(2, 13);
-        Vector3 randomPoint = new Vector3(positionX, 1.5f, positionZ);
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-        {
-            targetPosition = new Vector3(positionX, transform.position.y, positionZ);
-        }
-        else
-        {
-            newPosition();
-        }
+        float positionX = Random.Range(-2, -13);
+        float positionZ = Random.Range(7.5f, 12);
+        targetPosition = new Vector3(positionX, -0.4700003f, positionZ);
+
     }
 
     public void OnTriggerEnter(Collider other)
