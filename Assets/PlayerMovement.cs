@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
     // GroundCheck
     public Transform gC;
     // Speed
-    public float speed = 8f;
+    public float speed;
     // Gravity
-    public float gravity = 9.81f;
+    public float gravity;
     // JumpForce
     public float jumpForce;
     // GroundLayer
